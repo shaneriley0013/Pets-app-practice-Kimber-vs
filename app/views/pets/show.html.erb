@@ -4,7 +4,7 @@
 <p><strong>id:</strong> <%= @pet.id %><p>
 <p><strong>Breed:</strong> <%= @pet.breed %><p>
 <p><strong>Photo:</strong> <%= @pet.image %><p>
-<p><strong>user id:</strong> <%= @pet.user && @pet.user.name %><p>
+
 
 <a href="/pets/<%= @pet.id %>/edit">Edit pet</a>
 <a href="/pets/<%= @pet.id %>" data-turbo-method="delete">Remove pet</a>
