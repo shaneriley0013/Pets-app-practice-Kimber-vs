@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to "/pets"
     else
+      flash[:error] = "Invalid email or password"
       redirect_to "/login"
     end
   end
@@ -18,3 +19,4 @@ class SessionsController < ApplicationController
     redirect_to "/login"
   end
 end
+

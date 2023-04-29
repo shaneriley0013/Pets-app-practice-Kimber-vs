@@ -8,7 +8,15 @@
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
+
+  <% if flash[:error] %>
+  <div><%= flash[:error] %></div>
+<% end%>
+
   <div>
     <%= form.submit "Submit" %>
   </div>
-<% end%>
+
+
+<% end %>
+
