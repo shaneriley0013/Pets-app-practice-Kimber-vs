@@ -1,20 +1,40 @@
-<h1> New Pet </h1>
+<h1>New Pet</h1>
 
 <%= form_with model: @pet do |form| %>
   <div>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <% if @pet.errors[:name].any? %>
+      <div class="error">
+        <%= @pet.errors[:name].join(", ") %>
+      </div>
+    <% end %>
   </div>
+
   <div>
-  <%= form.label :breed %>
-  <%= form.text_field :breed %>
+    <%= form.label :breed %>
+    <%= form.text_field :breed %>
+    <% if @pet.errors[:breed].any? %>
+      <div class="error">
+        <%= @pet.errors[:breed].join(", ") %>
+      </div>
+    <% end %>
   </div>
+
   <div>
-  <%= form.label :image %>
-  <%= form.text_field :image %>
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+    <% if @pet.errors[:image].any? %>
+      <div class="error">
+        <%= @pet.errors[:image].join(", ") %>
+      </div>
+    <% end %>
   </div>
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+
+
+

@@ -1,9 +1,9 @@
 class PetsController < ApplicationController
 
   def index
-    @pets = Pet.where(user_id: current_user.id)
-    render :index
-  end
+  @pets = Pet.where(user_id: current_user.id)
+  render :index
+end
 
 
   def show
@@ -23,8 +23,13 @@ class PetsController < ApplicationController
       image: params[:pet][:image],
       user_id: current_user.id
     )
-    @pet.save
-    redirect_to "/pets/#{@pet.id}"
+    if @pet.save
+      # session[:user_id] = @user.id
+      redirect_to "/pets/#{@pet.id}"
+    else
+      render :new, status: :unprocessable_entity
+    end
+
   end
 
   def edit

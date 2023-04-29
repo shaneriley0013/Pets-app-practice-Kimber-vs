@@ -2,6 +2,10 @@
 
 
 <%= form_with model: @pet do |form| %>
+
+  <%= image_tag @pet.image, style: "width: 100px; height: 100px;" %>
+    <br>
+    <br>
   <div>
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -13,6 +17,9 @@
   <div>
     <%= form.label :image %>
     <%= form.text_field :image %>
+
+    <hr>
+
   </div>
   <div>
     <%= form.submit %>

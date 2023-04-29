@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     )
     if @user.save
       session[:user_id] = @user.id
-      redirect_to "/pets" #current_user.pets?
+      redirect_to "/pets"
     else
       render :new, status: :unprocessable_entity
     end

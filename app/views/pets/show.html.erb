@@ -2,7 +2,8 @@
 
 <p><strong>Name:</strong> <%= @pet.name %><p>
 <p><strong>Breed/Species:</strong> <%= @pet.breed %><p>
-<%= image_tag @pet.image %>
+<%= image_tag @pet.image, style: "width: 200px; height: 200px;" %>
+
 <br>
 
 <a href="/pets/<%= @pet.id %>/edit">Edit pet</a> |
