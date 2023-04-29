@@ -1,9 +1,10 @@
 class PetsController < ApplicationController
+
   def index
-    p current_user
     @pets = Pet.all
     render :index
   end
+
   def show
     @pet = Pet.find_by(id: params[:id])
     render :show
@@ -14,6 +15,7 @@ class PetsController < ApplicationController
   end
 
   def create
+
     @pet = Pet.new(
       name: params[:pet][:name],
       breed: params[:pet][:breed],
@@ -45,3 +47,4 @@ class PetsController < ApplicationController
   end
 
 end
+
