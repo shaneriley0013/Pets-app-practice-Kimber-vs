@@ -1,9 +1,10 @@
 class PetsController < ApplicationController
 
   def index
-    @pets = Pet.all
+    @pets = Pet.where(user_id: current_user.id)
     render :index
   end
+
 
   def show
     @pet = Pet.find_by(id: params[:id])
