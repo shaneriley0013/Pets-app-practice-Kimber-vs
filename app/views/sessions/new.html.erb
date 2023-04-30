@@ -1,5 +1,10 @@
 <h1>Login</h1>
+
 <%= form_with method: "post", url: "/sessions" do |form| %>
+   <% if flash[:error] %>
+      <div><%= flash[:error] %></div>
+  <% end%>
+
   <div>
     <%= form.label :email %>
     <%= form.email_field :email %>
@@ -9,9 +14,7 @@
     <%= form.password_field :password %>
   </div>
 
-  <% if flash[:error] %>
-  <div><%= flash[:error] %></div>
-<% end%>
+
 
   <div>
     <%= form.submit "Submit" %>
